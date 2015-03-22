@@ -1,0 +1,6 @@
+<!doctype html>
+<title>index.onup.me</title>
+{% for post in posts %}
+  {{ post.content | striptags | truncate(140) }} 
+  <p><a href="{{ post.url }}">Read more...</a></p>
+{% endfor %}
