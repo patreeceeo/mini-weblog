@@ -3,14 +3,24 @@
 <head>
     {% block head %}
     <title>{% block title %}{% endblock %} - onup.me</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Karma:700,400' rel='stylesheet' type='text/css'>
     {% endblock %}
 </head>
 <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-        <p><a href="http://www.papyrusoft.com">Hand-crafted</a> with 'nix, Python, and Love.</p>
+    <div class="Main">
+      <header class="Main-section">
+        {% block header %}
         {% endblock %}
+      </header>
+      <div id="content" class="Main-section">{% block content %}{% endblock %}</div>
+      <footer class="Main-section">
+          {% block footer %}
+          <p class="u-alignCenter"><a href="http://www.papyrusoft.com">Hand-crafted</a> with Python + Love.</p>
+          {% endblock %}
+      </footer>
     </div>
 </body>
 </html>

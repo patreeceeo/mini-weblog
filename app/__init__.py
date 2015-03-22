@@ -1,3 +1,5 @@
+# encoding=utf8  
+from __future__ import unicode_literals
 import os
 from markdown import markdown
 from flask import Flask, send_file
@@ -15,6 +17,10 @@ class Post(object):
     def path_for(filename):
         return os.path.join(Post.path(), filename)
 
+    @staticmethod
+    def is_post_file(filename):
+        return os.path.isfile(Post.path_for(filename)) and filename[0] != "."
+
     def __init__(self, name):
         self.title = name
         self.filepath = self.path_for(name)
@@ -22,6 +28,10 @@ class Post(object):
         self.file = open(self.filepath)
         raw_content = self.file.read()
         self.content = markdown(raw_content)
+
+@app.route('/favicon.ico')
+def get_favicon():
+    return send_file(os.path.join(os.getcwd(), 'favicon.ico'))
 
 @app.route('/static/<subdir>/<filename>')
 def get_static_file(subdir, filename):
