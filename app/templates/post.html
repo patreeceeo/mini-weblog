@@ -1,4 +1,3 @@
-<!doctype html>
-<title>{{ title }}.onup.me</title>
-{{ content | safe }}
-<p><a href="http://www.papyrusoft.com">Hand-crafted</a> with 'nix, Python, and Love</p>
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %} {{ content | safe }} {% endblock %}
