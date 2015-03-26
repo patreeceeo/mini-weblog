@@ -5,7 +5,6 @@ from markdown import markdown
 from flask import Flask, send_file
 from flask import render_template
 app = Flask(__name__)
-app.debug = True
 
 class Post(object):
 
@@ -21,10 +20,11 @@ class Post(object):
     def is_post_file(filename):
         return os.path.isfile(Post.path_for(filename)) and filename[0] != "."
 
-    def __init__(self, name):
-        self.title = name
-        self.filepath = self.path_for(name)
-        self.url = '/post/' + name + '.html'
+    def __init__(self, filename):
+        without_extension = filename.split(".")[0]
+        self.title = without_extension
+        self.filepath = self.path_for(filename)
+        self.url = '/post/' + without_extension + '.html'
         self.file = open(self.filepath)
         raw_content = self.file.read()
         self.content = markdown(raw_content)
@@ -39,12 +39,12 @@ def get_static_file(subdir, filename):
 
 @app.route("/")
 def index():
-    posts = [ Post(os.path.basename(filename)) for filename in os.listdir(Post.path()) if os.path.isfile(Post.path_for(filename)) ]
+    posts = [ Post(filename) for filename in os.listdir(Post.path()) if Post.is_post_file(filename) ]
     return render_template('index.html', posts=posts)
 
-@app.route("/post/<basename>.html")
-def get_formatted_post(basename):
-    post = Post(basename)
+@app.route("/post/<slug>.html")
+def get_formatted_post(slug):
+    post = Post(slug + ".txt")
     return render_template('post.html', title=post.title, content=post.content)
 
 
