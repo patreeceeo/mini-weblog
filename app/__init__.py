@@ -5,6 +5,7 @@ from markdown import markdown
 from flask import Flask, send_file
 from flask import render_template
 app = Flask(__name__)
+app.debug=True
 
 class Post(object):
 
@@ -27,7 +28,7 @@ class Post(object):
         self.url = '/post/' + without_extension + '.html'
         self.file = open(self.filepath)
         raw_content = self.file.read()
-        self.content = markdown(raw_content)
+        self.content = markdown(raw_content.decode("utf-8"))
 
 @app.route('/favicon.ico')
 def get_favicon():
