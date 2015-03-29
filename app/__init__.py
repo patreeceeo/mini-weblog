@@ -19,7 +19,7 @@ class Post(object):
 
     @staticmethod
     def is_post_file(filename):
-        return os.path.isfile(Post.path_for(filename)) and filename[0] != "."
+        return os.path.isfile(Post.path_for(filename)) and filename[0] != "." and filename.split(".")[1] == "txt"
 
     def __init__(self, filename):
         without_extension = filename.split(".")[0]

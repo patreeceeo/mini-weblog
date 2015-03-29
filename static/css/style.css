@@ -1,0 +1,61 @@
+.Post {
+  /* font-family: Georgia, Times, Times New Roman, serif; */
+  font-family: "Karma", serif;
+  line-height: 166%;
+}
+
+.Post p, 
+.Post ul, 
+.Post ol {
+  max-width: 640px;
+  min-width: 160px;
+  margin: 0 auto 1em auto;
+}
+
+.Post ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.Post em {
+  font-style: italic;
+}
+
+.Post strong {
+  font-weight: 700;
+}
+
+.Post .Post-image {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Post .Post-image img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.Post.Post--preview {
+  margin-bottom: 4rem;
+}
+
+.Main {
+}
+
+.Main .Main-section {
+  margin-top: 1rem;
+}
+
+.u-alignRight {
+  text-align: right;
+}
+
+.u-alignCenter {
+  text-align: center;
+}
+
+
+
+
