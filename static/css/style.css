@@ -1,15 +1,45 @@
+
 .Post {
   /* font-family: Georgia, Times, Times New Roman, serif; */
   font-family: "Karma", serif;
   line-height: 166%;
 }
 
-.Post p, 
-.Post ul, 
-.Post ol {
+.Main p, 
+.Main ul, 
+.Main ol,
+.Main h1,
+.Main h2,
+.Main h3,
+.Main h4 {
   max-width: 640px;
   min-width: 160px;
-  margin: 0 auto 1em auto;
+  margin: 1rem auto 1em auto;
+}
+
+.Main h1:first-child,
+.Main h2:first-child,
+.Main h3:first-child,
+.Main h4:first-child,
+.Main p:first-child {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.Main h1:last-child,
+.Main h2:last-child,
+.Main h3:last-child,
+.Main h4:last-child,
+.Main p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.Main .Main-section {
+  margin: 0 0.5rem 0 0.5rem;
+}
+.Main .Main-section.Main-section--footer {
+  margin: 0;
 }
 
 .Post ol {
@@ -41,21 +71,26 @@
   margin-bottom: 4rem;
 }
 
-.Main {
-}
 
-.Main .Main-section {
-  margin-top: 1rem;
+.Subsection {
+  border-bottom: 1px solid wheat;
+}
+.Subsection + .Subsection {
+  margin-top: -1px;
+}
+.Subsection:last-child {
+  border-bottom: 0;
 }
 
 .u-alignRight {
   text-align: right;
 }
-
 .u-alignCenter {
   text-align: center;
 }
-
+.u-pullRight {
+  float: right;
+}
 
 
 

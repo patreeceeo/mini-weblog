@@ -1,0 +1,27 @@
+
+body, html {
+  background-color: #321;
+  color: rgba(255, 255, 255, 0.77);
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.88);
+}
+a, a:active, a:visited {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+h3 {
+  color: rgba(255, 255, 255, 0.66);
+}
+h4 {
+  color: rgba(255, 255, 255, .88);
+}
+
+.Main {
+  background-color: #3a2c1f;
+}
+.Main .Main-section.Main-section--footer {
+  background-color: #321;
+}
+

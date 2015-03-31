@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block title %} index {% endblock %}
-{% block header %} <h3>WorldWide Weblog</h3> {% endblock %}
+{% block header %} 
+  <div class="Subsection">
+    <h3>WorldWide Weblog</h3>
+  </div> 
+  <div class="Subsection">
+    <h4>Ramblings on Ramblings</h4>
+  </div>
+{% endblock %}
 {% block content %}
   {% for post in posts %}
     <article class="Post Post--preview">

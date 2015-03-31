@@ -31,8 +31,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   font-family: "Courier New";
-  color: white;
-  background-color: #607688;
 }
 ol, ul {
 	list-style: none;
@@ -51,15 +49,16 @@ table {
 }
 
 a, a:hover, a:active, a:visited {
-  color: #ddd;
   font-weight: bold;
   text-decoration: underline;
 }
-a:hover {
-  color: white;
-}
 
 h3 {
-  text-transform: uppercase;
   font-size: 200%;
+  text-transform: uppercase;
 }
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
