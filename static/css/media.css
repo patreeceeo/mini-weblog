@@ -1,0 +1,36 @@
+@media (max-device-width: 64em) {
+  .Main p, 
+  .Main ul, 
+  .Main ol,
+  .Main h1,
+  .Main h2,
+  .Main h3,
+  .Main h4 {
+    max-width: none;
+    min-width: none;
+    margin: 1rem 0;
+  }
+
+  .Main .Main-section {
+    margin: 0 1rem;
+  }
+
+  html, body {
+    font-size: 120%;
+  }
+
+  .Button {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+}
+
+@media (max-device-width: 40em) {
+  html, body {
+    font-size: 166%;
+  }
+}
+
+@media print {
+}

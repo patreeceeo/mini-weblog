@@ -1,10 +1,3 @@
-
-.Post {
-  /* font-family: Georgia, Times, Times New Roman, serif; */
-  font-family: "Karma", serif;
-  line-height: 166%;
-}
-
 .Main p, 
 .Main ul, 
 .Main ol,
@@ -14,9 +7,10 @@
 .Main h4 {
   max-width: 640px;
   min-width: 160px;
-  margin: 1rem auto 1em auto;
+  margin: 1rem auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .Main h1:first-child,
 .Main h2:first-child,
 .Main h3:first-child,
@@ -25,7 +19,6 @@
   margin-top: 0;
   padding-top: 1rem;
 }
-
 .Main h1:last-child,
 .Main h2:last-child,
 .Main h3:last-child,
@@ -34,43 +27,40 @@
   margin-bottom: 0;
   padding-bottom: 1rem;
 }
-
 .Main .Main-section {
-  margin: 0 0.5rem 0 0.5rem;
+  margin: 0 0.5rem 0;
 }
 .Main .Main-section.Main-section--footer {
   margin: 0;
 }
 
+.Post {
+  font-family: "Karma", serif;
+  line-height: 166%;
+}
 .Post ol {
   list-style-type: decimal;
   list-style-position: inside;
 }
-
 .Post em {
   font-style: italic;
 }
-
 .Post strong {
   font-weight: 700;
 }
-
 .Post .Post-image {
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
-
 .Post .Post-image img {
   max-width: 100%;
   margin: 0 auto;
   display: block;
 }
-
 .Post.Post--preview {
   margin-bottom: 4rem;
 }
-
 
 .Subsection {
   border-bottom: 1px solid wheat;

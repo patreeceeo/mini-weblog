@@ -12,7 +12,7 @@
   {% for post in posts %}
     <article class="Post Post--preview">
       <p>{{ post.content | striptags | truncate(250) }}<p>
-      <p class="u-alignRight"><a href="{{ post.url }}">Read more</a></p>
+      <p class="u-alignRight"><a class="Button" href="{{ post.url }}">Read more</a></p>
     </article>
   {% endfor %}
 {% endblock %}
