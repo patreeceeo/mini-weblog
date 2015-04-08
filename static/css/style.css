@@ -33,6 +33,30 @@
 .Main .Main-section.Main-section--footer {
   margin: 0;
 }
+.Main blockquote {
+  text-align: center;
+  white-space: nowrap;
+}
+.Main blockquote p {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: middle;
+  max-width: 75%;
+}
+.Main blockquote:before {
+  content: '“';
+  font-size: 300%;
+  height: 1rem;
+  vertical-align: middle;
+  margin: 1rem;
+}
+.Main blockquote:after {
+  content: '”';
+  font-size: 300%;
+  height: 1rem;
+  vertical-align: middle;
+  margin: 1rem;
+}
 
 .Post {
   font-family: "Karma", serif;
