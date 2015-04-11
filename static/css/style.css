@@ -86,6 +86,21 @@
   margin-bottom: 4rem;
 }
 
+.LongQuote {
+  padding: 2rem 1rem;
+}
+.LongQuote p:first-child {
+  /* padding-top: 2rem; */
+  vertical-align: bottom;
+}
+.LongQuote p:first-child:first-letter {
+  font-size: 300%;
+  vertical-align: bottom;
+}
+.LongQuote .LongQuote-attr {
+  font-size: small;
+}
+
 .Subsection {
   border-bottom: 1px solid wheat;
 }
