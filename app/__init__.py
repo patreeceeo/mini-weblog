@@ -5,8 +5,11 @@ import pyth
 from markdown import markdown
 from flask import Flask, send_file
 from flask import render_template
+from markdown_embed_media import MarkdownEmbedMedia
 app = Flask(__name__)
 app.debug=True
+
+
 
 class Post(object):
 
@@ -29,7 +32,7 @@ class Post(object):
         self.url = '/post/' + without_extension + '.html'
         self.file = open(self.filepath)
         raw_content = self.file.read()
-        self.content = markdown(raw_content.decode("utf-8"))
+        self.content = markdown(raw_content.decode("utf-8"), extensions=[MarkdownEmbedMedia(), 'markdown.extensions.smarty'])
 
 @app.route('/favicon.ico')
 def get_favicon():
@@ -48,7 +51,6 @@ def index():
 def get_formatted_post(slug):
     post = Post(slug + ".txt")
     return render_template('post.html', title=post.title, content=post.content)
-
 
 # if not app.debug:
 #    import logging
