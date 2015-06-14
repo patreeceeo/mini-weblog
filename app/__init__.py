@@ -50,7 +50,19 @@ def index():
 @app.route("/post/<slug>.html")
 def get_formatted_post(slug):
     post = Post(slug + ".txt")
-    return render_template('post.html', title=post.title, content=post.content)
+    filenames = [ filename.strip() for filename in open(pyth.unix("~/weblog-data/index.txt")).readlines() ]
+    print filenames
+    post_index = filenames.index(slug + ".txt")
+    if post_index > 0:
+        post_prev = Post(filenames[post_index - 1])
+    else:
+        post_prev = None
+
+    if post_index < len(filenames) - 1:
+        post_next = Post(filenames[post_index + 1])
+    else:
+        post_next = None
+    return render_template('post.html', title=post.title, content=post.content, post_prev=post_prev, post_next=post_next)
 
 # if not app.debug:
 #    import logging
