@@ -40,7 +40,7 @@ def get_favicon():
 
 @app.route('/static/<subdir>/<filename>')
 def get_static_file(subdir, filename):
-    return send_file(os.path.join(os.getcwd(), 'static', subdir, filename))
+    return send_file(os.path.join(pyth.unix("~/weblog-static/"), "static", subdir, filename))
 
 @app.route("/")
 def index():
