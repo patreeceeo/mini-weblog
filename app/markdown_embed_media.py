@@ -9,7 +9,7 @@ IMAGE_TEMPLATE = """
 
 VIDEO_REGEX = re.compile("\[\[video (.*?)\]\]")
 VIDEO_TEMPLATE = """
-    <p class="Post-video"><video src="/static/images/{filename}" autoplay controls loop>
+    <p class="Post-video"><video src="/static/images/{filename}" controls loop>
     Sorry, your browser doesn't support embedded videos, 
     but don't worry, you can <a href="/static/images/{filename}">download it</a>
     and watch it with your favorite video player!
