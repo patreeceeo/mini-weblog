@@ -51,7 +51,6 @@ def index():
 def get_formatted_post(slug):
     post = Post(slug + ".txt")
     filenames = [ filename.strip() for filename in open(pyth.unix("~/weblog-data/index.txt")).readlines() ]
-    print filenames
     post_index = filenames.index(slug + ".txt")
     if post_index > 0:
         post_prev = Post(filenames[post_index - 1])

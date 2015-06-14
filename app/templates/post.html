@@ -4,6 +4,7 @@
 <article class="Post"> 
   <h4><a class="Button" href="/">&laquo; home</a></h4>
   {{ content | safe }} 
+  <p class="u-alignCenter">§</p>
   <div class="Columns Paragraph">
     <article class="Columns-column-1">
       {% if post_prev %}
@@ -13,10 +14,9 @@
     </article><article class="Columns-column-2">
       {% if post_next %}
       <h4><a class="Button" href="{{ post_next.url }}">on up &raquo;</a></h4>
-      <p>{{ post_next.content | striptags | truncate(140) }}<p>
+      <p>{{ post_next.content | striptags | truncate(140) }}</p>
       {% endif %}
     </article>
-    <p>
   <div>
 </article>
 {% endblock %}
