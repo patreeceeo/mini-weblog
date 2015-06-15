@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block title %} index {% endblock %}
 {% block header %} 
-  <div class="Subsection">
-    <h3>WorldWide Weblog</h3>
-  </div> 
-  <div class="Subsection">
-    <h4>Ramblings on Ramblings</h4>
+<header class="Main-section Main-section--header Main-section--withBGImage" style="background-image: url({{header_image}})">
+  <div class="u-sunk u-fadeToBG">
+    <div class="Subsection">
+      <h3>WorldWide Weblog</h3>
+    </div> 
+    <div class="Subsection">
+      <h4>Ramblings on Ramblings</h4>
+    </div>
   </div>
+</header>
 {% endblock %}
 {% block content %}
   {% for post in posts %}

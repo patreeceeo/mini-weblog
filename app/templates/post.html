@@ -6,17 +6,17 @@
   {{ content | safe }} 
   <p class="u-alignCenter">§</p>
   <div class="Columns Paragraph">
-    <article class="Columns-column-1">
+    <div class="Columns-column-1">
       {% if post_prev %}
       <h4><a class="Button" href="{{ post_prev.url }}">&laquo; on down</a></h4>
       <p>{{ post_prev.content | striptags | truncate(140) }}</p>
       {% endif %}
-    </article><article class="Columns-column-2">
+    </div><div class="Columns-column-2">
       {% if post_next %}
       <h4><a class="Button" href="{{ post_next.url }}">on up &raquo;</a></h4>
       <p>{{ post_next.content | striptags | truncate(140) }}</p>
       {% endif %}
-    </article>
+    </div>
   <div>
 </article>
 {% endblock %}

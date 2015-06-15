@@ -44,8 +44,13 @@ def get_static_file(subdir, filename):
 
 @app.route("/")
 def index():
+    import glob
+    import random
+    from os.path import basename
     posts = [ Post(filename) for filename in open(pyth.unix("~/weblog-data/index.txt")).readlines() ]
-    return render_template('index.html', posts=posts)
+    images = glob.glob(os.path.join(pyth.unix("~/weblog-static/"), "static", "images", "*.jpg"))
+    header_image = "/static/images/" + basename(images[random.randint(0, len(images) - 1)])
+    return render_template('index.html', posts=posts, header_image=header_image)
 
 @app.route("/post/<slug>.html")
 def get_formatted_post(slug):

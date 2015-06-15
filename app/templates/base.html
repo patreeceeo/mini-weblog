@@ -13,10 +13,8 @@
 </head>
 <body>
     <div class="Main">
-      <header class="Main-section Main-section--header">
-        {% block header %}
-        {% endblock %}
-      </header>
+      {% block header %}
+      {% endblock %}
       <div id="content" class="Main-section">{% block content %}{% endblock %}</div>
       <footer class="Main-section Main-section--footer">
           {% block footer %}
